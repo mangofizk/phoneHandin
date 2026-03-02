@@ -533,6 +533,9 @@ MonoBehaviour:
   scoreText: {fileID: 2097565068}
   startText: {fileID: 188892614}
   player: {fileID: 1751958828}
+  brickPref:
+  - {fileID: 7482223334733885277, guid: 525bc75d79bcde24d97cd19e9628d93c, type: 3}
+  - {fileID: 7482223334733885277, guid: 3caecc49b7235f1429bae38b6b41f4e3, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

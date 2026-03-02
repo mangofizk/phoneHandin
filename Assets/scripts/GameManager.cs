@@ -17,7 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI startText;
 
     [SerializeField] Player player;
-   
+
+    [SerializeField] GameObject[] brickPref;
+
     void SpawnEnemy()
     {
         float randomX = Random.Range(0f, 1f);
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
 
         Vector2 worldPos = Camera.main.ViewportToWorldPoint(viewPortPos);
 
-        Instantiate(enemyPrefab, worldPos,Quaternion.identity);
+        Instantiate (brickPref[Random.Range(0, 2)], worldPos,Quaternion.identity);
 
         score++;
         UpdateText(score);
