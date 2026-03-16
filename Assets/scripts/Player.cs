@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] InputSys InputSys;
 
     public DodgerAttributes dodgerAttributes;
+
+    public shield shield;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -53,10 +55,13 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-            dodgerAttributes.setcurrenthealth(dodgerAttributes.getcurrenthealth() - 1);
+        if(!shield.isShieldActive) { 
 
-        if (collision.gameObject.CompareTag("Enemy") && dodgerAttributes.getcurrenthealth() == 0) 
-        SceneManager.LoadScene(0);
+            if (collision.gameObject.CompareTag("Enemy"))
+                dodgerAttributes.setcurrenthealth(dodgerAttributes.getcurrenthealth() - 1);
+
+            if (collision.gameObject.CompareTag("Enemy") && dodgerAttributes.getcurrenthealth() == 0) 
+            SceneManager.LoadScene(0);
+        }
     }
 }

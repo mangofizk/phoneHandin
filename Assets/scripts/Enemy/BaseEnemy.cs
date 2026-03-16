@@ -5,6 +5,7 @@ abstract class BaseEnemy : MonoBehaviour
 {
     public float gravityScale = 1f;
     Rigidbody2D rb;
+    
 
     void Start()
     {

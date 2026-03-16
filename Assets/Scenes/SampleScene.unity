@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7482223334733885277, guid: b394b6594ee6cec4fb9ba78daf7b7df8, type: 3}
-  spawnRate: 0.5
+  spawnRate: 3
   scoreText: {fileID: 2097565068}
   startText: {fileID: 188892614}
   player: {fileID: 1751958828}
@@ -823,6 +823,7 @@ GameObject:
   - component: {fileID: 1751958830}
   - component: {fileID: 1751958829}
   - component: {fileID: 1751958828}
+  - component: {fileID: 1751958833}
   m_Layer: 0
   m_Name: playerSprite
   m_TagString: Untagged
@@ -844,6 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 5
   InputSys: {fileID: 554488378}
+  shield: {fileID: 1751958833}
 --- !u!61 &1751958829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -981,12 +983,27 @@ Transform:
   m_GameObject: {fileID: 1751958827}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: -4.01, z: 0}
+  m_LocalPosition: {x: 0.26, y: -3.81, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751958833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751958827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae710f9e99eb8114db471246a61ba8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1751958827}
+  maxTapDelay: 0.3
+  isShieldActive: 0
 --- !u!1 &2097565066
 GameObject:
   m_ObjectHideFlags: 0
