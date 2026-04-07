@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     bool gamestart = false;
 
-    int score = 0;
+    public int score = 0;
 
     Vector2 screenPos;
 

@@ -18,6 +18,7 @@ abstract class BaseEnemy : MonoBehaviour
 
         if (viewportPos.y < 0f)
         {
+            
             Destroy(gameObject);
         }
     }

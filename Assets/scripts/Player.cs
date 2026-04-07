@@ -14,12 +14,14 @@ public class Player : MonoBehaviour
     public DodgerAttributes dodgerAttributes;
 
     public shield shield;
+
+    [SerializeField] DataSaver DataSaver;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        dodgerAttributes = new DodgerAttributes(10 , 20, 0);
+        dodgerAttributes = new DodgerAttributes(1 , 20, 0);
     }
 
     // Update is called once per frame
@@ -61,8 +63,14 @@ public class Player : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
                 dodgerAttributes.setcurrenthealth(dodgerAttributes.getcurrenthealth() - 1);
 
-            if (collision.gameObject.CompareTag("Enemy") && dodgerAttributes.getcurrenthealth() == 0) 
-            SceneManager.LoadScene(0);
+            if (collision.gameObject.CompareTag("Enemy") && dodgerAttributes.getcurrenthealth() == 0)
+            {
+                DataSaver.SaveData();
+                SceneManager.LoadScene(0);
+            }
+
+
+            
         }
     }
 }
